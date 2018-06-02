@@ -39,10 +39,11 @@
 ;;; Customization
 
 (defcustom prettify-date-time-format
-  (cons "%A, %-d %B %Y" " at %-I:%M%P")
+  (cons "%A, %-d %B %Y" "at %-I:%M%P")
   "Format to redisplay the date and time.
 When redisplaying the date, the first element is used, when
-redisplaying date and time, both elements are used.
+redisplaying date and time, both elements are used (a space is
+inserted between the two).
 
 See `format-time-string' for options."
   :group 'prettify-date-time-mode
@@ -70,7 +71,7 @@ See `format-time-string' for options."
           string)
       (setq string (format-time-string
                     (if (match-string 2)
-                        (concat (car prettify-date-time-format)
+                        (concat (car prettify-date-time-format) "\s"
                                 (cdr prettify-date-time-format))
                       (car prettify-date-time-format))
                     time))
