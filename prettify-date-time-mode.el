@@ -88,7 +88,8 @@ See `format-time-string' for options."
   (if prettify-date-time-mode
       (jit-lock-register #'prettify-date-time-redisplay)
     (jit-lock-unregister #'prettify-date-time-redisplay)
-    (set-text-properties (point-min) (point-max) 'dislay)))
+    (with-silent-modifications
+     (set-text-properties (point-min) (point-max) 'dislay))))
 
 (provide 'prettify-date-time-mode)
 ;;; prettify-date-time-mode.el ends here
