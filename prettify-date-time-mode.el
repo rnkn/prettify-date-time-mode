@@ -52,8 +52,8 @@ See `format-time-string' for options."
                (string :tag "Time format string")))
 
 (defcustom prettify-date-time-lighter
-  " t"
-  "Mode-line indicator for `prettify-date-mode'."
+  " Pdatetime"
+  "Mode-line indicator for `prettify-date-time-mode'."
   :group 'prettify-date-time-mode
   :safe 'stringp
   :type 'string)
